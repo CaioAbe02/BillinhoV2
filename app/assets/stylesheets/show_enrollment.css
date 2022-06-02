@@ -1,0 +1,7 @@
+.show_enrollment_name {
+    padding: 0.5rem 0rem;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    place-self: stretch;
+    box-shadow: 0 5px 10px #e1e5ee;
+}

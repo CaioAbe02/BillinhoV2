@@ -1,0 +1,66 @@
+<div class="centralized">
+  <h1>Enrollment Info</h1>
+
+  <div class="show">
+    <div class="show_enrollment_name">
+      <h2><%= enrollment.course_name %> - <%= enrollment.student.name %></h2>
+    </div>
+
+    <div class="grid_column_1 show_infos">
+      <strong>ID</strong>
+      <p><%= enrollment.id %></p>
+    </div>
+
+    <div class="grid_column_2 show_infos">
+      <strong>Full Value</strong>
+      <p><%= enrollment.full_value %></p>
+    </div>
+
+    <div class="grid_column_3 show_infos">
+      <strong>Installments</strong>
+      <p><%= enrollment.installments %></p>
+    </div>
+
+    <div class="grid_column_1 show_infos">
+      <strong>Due Day</strong>
+      <p><%= enrollment.due_day %></p>
+    </div>
+
+    <div class="grid_column_2 show_infos">
+      <strong>Institution Name</strong>
+      <p><%= enrollment.institution.name %></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2 style="text-align:left">Bills</h2>
+
+  <hr>
+
+  <div class="enrollment_students">
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Value</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th colspan="1">Actions</th>
+          </tr>
+        </thead>
+          <tbody>
+            <% enrollment.bills.each do |bill|%>
+              <tr>
+                <td><%= bill.id %></td>
+                <td><%= bill.bill_value %></td>
+                <td><%= bill.due_date %></td>
+                <td><%= bill.bill_status %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

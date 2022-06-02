@@ -1,0 +1,54 @@
+<%= form_with(model: enrollment) do |form| %>
+  <% if enrollment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(enrollment.errors.count, "error") %> prohibited this enrollment from being saved:</h2>
+
+      <ul>
+        <% enrollment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="forms forms-enrollment">
+    <div>
+      <%= form.label :full_value, style: "display: block" %>
+      <%= form.text_field :full_value %>
+    </div>
+
+    <div class="grid_column_2">
+      <%= form.label :installments, style: "display: block" %>
+      <%= form.number_field :installments %>
+    </div>
+
+    <div>
+      <%= form.label :due_day, style: "display: block" %>
+      <%= form.number_field :due_day %>
+    </div>
+
+    <div>
+      <%= form.label :course_name, style: "display: block" %>
+      <%= form.text_field :course_name %>
+    </div>
+
+    <div>
+      <%= form.label :institution_id, style: "display: block" %>
+      <%= form.select :institution_id, Institution.all.map { |institution| [institution.name, institution.id] }, { prompt: "Select a Institution" }, { class: "select_institution" } %>
+    </div>
+
+    <div>
+      <%= form.label :student_id, style: "display: block" %>
+      <%= form.select :student_id, Student.all.map { |student| [student.name, student.id] }, { prompt: "Select a Student" }, { class: "select_institution" } %>
+    </div>
+
+    <div class="forms-button">
+      <%= link_to "Cancel", :back, class:"button button-cancel" %>
+    </div>
+
+    <div class="forms-button">
+      <%= form.submit "Confirm", class:"button button-confirm" %>
+    </div>
+  </div>
+
+<% end %>

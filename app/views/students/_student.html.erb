@@ -1,0 +1,105 @@
+<div class="centralized">
+  <h1>Student Info</h1>
+
+  <div class = "show">
+    <div class = "show_student_name">
+      <h2><%= student.name %></h2>
+    </div>
+
+    <div class="grid_column_1 show_infos">
+        <strong>CPF</strong>
+        <p><%= student.cpf %></p>
+    </div>
+
+    <div class="grid_column_2 show_infos">
+      <strong>Birth Date</strong>
+      <p><%= student.birth_date %></p>
+    </div>
+
+    <div class="grid_column_3 show_infos">
+      <strong>Phone</strong>
+      <p><%= student.phone %></p>
+    </div>
+
+    <div class="show_infos">
+      <strong>Gender</strong>
+      <p><%= student.gender %></p>
+    </div>
+
+    <div class="show_infos">
+      <strong>Bill Payment Type</strong>
+      <p><%= student.bill_payment_type %></p>
+    </div>    
+  
+    <div class="show_edit_button">
+      <%= link_to "Edit ", edit_student_path(@student), class:"button button-edit" %>
+    </div>
+  </div>
+
+
+  <div>
+    <%= button_to "Destroy", student, form: {data: {turbo_confirm: "Are you sure?"}}, method: :delete, class:"button button-destroy" %>
+  </div>
+
+  <hr> 
+
+  <% if student.enrollments.present? %>
+    <h2 style="text-align:left">Enrollments</h2>
+  <% end %>
+
+  <hr>
+
+  <% student.enrollments.each do |enrollment| %>
+    <div class="student_enrollments">
+        <div class="student_enrollment_title">
+          <h2><%= enrollment.institution.name %> - <%= enrollment.course_name %></h2>
+        </div>
+
+        <div class="grid_column_1 show_infos">
+          <strong>ID</strong>
+          <p><%= enrollment.id %></p>
+        </div>
+        
+        <div class="grid_column_2 show_infos">
+          <strong>Full Value</strong>
+          <p><%= enrollment.full_value %></p>
+        </div>
+
+        <div class="grid_column_3 show_infos">
+          <strong>Installments</strong>
+          <p><%= enrollment.installments %></p>
+        </div>
+
+        <div class="grid_column_4 show_infos">
+          <strong>Due Day</strong>
+          <p><%= enrollment.due_day %></p>
+        </div>
+    </div>
+
+    <div class = "tables student_enrollments_table">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Value</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          <tr>
+        </thead>
+        <tbody>
+          <% enrollment.bills.each do |bill| %>
+            <tr>
+              <td><%= bill.id %></td>
+              <td><%= bill.bill_value %></td>
+              <td><%= bill.due_date %></td>
+              <td><%= bill.bill_status %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <hr>      
+  <% end %>
+
+  <%= link_to "Back to students", students_path %>

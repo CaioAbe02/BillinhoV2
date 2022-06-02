@@ -1,0 +1,17 @@
+.show {
+    display: grid;
+    background-color: white;
+    box-shadow: 0 5px 10px #e1e5ee;
+    width: 500px;
+    align-items: center;
+    justify-items: left;
+    justify-self: center;
+}
+
+.show_infos {
+    padding: 1rem 1rem;
+}
+
+.show p, h2 {
+    margin: 0;
+}

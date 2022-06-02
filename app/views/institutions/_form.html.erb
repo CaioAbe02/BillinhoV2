@@ -1,0 +1,38 @@
+<%= form_with(model: institution) do |form| %>
+  <% if institution.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(institution.errors.count, "error") %> prohibited this institution from being saved:</h2>
+
+      <ul>
+        <% institution.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="forms forms-institution">
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="grid_column_2">
+    <%= form.label :cnpj, style: "display: block" %>
+    <%= form.text_field :cnpj %>
+  </div>
+
+  <div class="grid_span_2">
+    <%= form.label :institution_type, style: "display: block" %>
+    <%= form.select :institution_type, ["Universidade", "Escola", "Creche"], { prompt: "Select a Student" }, { class: "select_institution" } %>
+  </div>
+
+  <div>
+    <%= link_to "Cancel", :back, class:"button button-cancel" %>
+  </div>
+
+  <div class="confirm_student_button">
+    <%= form.submit "Confirm", class:"button button-confirm" %>
+  </div>
+</div>
+<% end %>

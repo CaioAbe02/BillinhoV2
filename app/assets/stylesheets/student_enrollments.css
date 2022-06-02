@@ -1,0 +1,26 @@
+.student_enrollments {
+    display: grid;
+    background-color: white;
+    box-shadow: 0 5px 10px #e1e5ee;
+    width: 100%;
+    align-items: center;
+    justify-items: left;
+    justify-self: center;
+}
+
+.student_enrollment_title {
+    text-align: center;
+    padding: 0.5rem 0rem;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    place-self: stretch;
+    box-shadow: 0 5px 10px #e1e5ee;
+}
+
+.student_enrollments p {
+    margin: 0;
+}
+
+.student_enrollments_table {
+     box-shadow: 0px 5px 20px #e1e5ee;
+}

@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="tables">
+  <h1>Bills</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Due Date</th>
+        <th>Status</th>
+        <th>Enrollment ID</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @bills.each do |bill|%>
+        <tr>
+          <td><%= bill.bill_value.round(2) %></td>
+          <td><%= bill.due_date %></td>
+          <td><%= bill.bill_status %></td>
+          <td><%= bill.enrollment_id %></td>
+          <td><%= link_to "Edit", edit_bill_path(bill) %></td>
+          <td><%= button_to "Destroy", bill, form: {data: {turbo_confirm: "Are you sure?"}}, method: :delete %></td>       
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="tables">
+  <h1>Enrollments</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Full Value</th>
+        <th>Installments</th>
+        <th>Due Day</th>
+        <th>Course Name</th>
+        <th>Institution<//th>
+        <th>Student</th>
+        <th colspan="3">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @enrollments .each do |enrollment|%>
+        <tr>
+          <td><%= enrollment.full_value %></td>
+          <td><%= enrollment.installments %></td>
+          <td><%= enrollment.due_day %></td>
+          <td><%= enrollment.course_name %></td>
+          <td><%= enrollment.institution.name %></td>
+          <td><%= enrollment.student.name %></td>
+          <td><%= link_to "Show", enrollment, class:"button button-show" %></td>
+          <td><%= link_to "Edit", edit_enrollment_path(enrollment) , class:"button button-edit" %></td>
+          <td><%= button_to "Destroy", enrollment, form: {data: {turbo_confirm: "Are you sure?"}}, method: :delete %></td>    
+        </tr>
+        <% if enrollment == @enrollments.last %>
+          <tr>
+            <td colspan="9"><%= link_to "+ New enrollment", new_enrollment_path, class:"link_new" %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

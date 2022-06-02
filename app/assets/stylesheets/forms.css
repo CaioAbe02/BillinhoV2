@@ -1,0 +1,70 @@
+.forms {
+    font-family: Mukta, sans-serif;
+    font-size: 0.9rem;
+    margin: 0 auto;
+    box-shadow: 0 5px 10px #e1e5ee;
+    display: grid;
+    column-gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+    .forms-student {
+        height: 350px;
+        width: 450px;
+    }
+
+    .forms-institution {
+        height: 250px;
+        width: 450px;
+    } 
+
+    .forms-enrollment {
+        height: 350px;
+        width: 450px;
+    }
+
+    .forms-button {
+        justify-self: center;
+    }
+
+.forms input, select {
+    display: inline;
+    font-family: Mukta, sans-serif;
+    font-size: 0.9rem;
+    border-width: 0;
+}
+
+.forms input[type="text"], input[type="number"], input[type="date"]{
+    width: 175px;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #b9bfc7;
+    background-color: white;
+    padding: 0.5rem 0.5rem;
+}
+
+.forms input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus {
+    outline: none;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #b9bfc7;
+    
+    background-color: white;
+}
+
+.forms input[type="submit"] {
+    cursor: pointer;
+    justify-content: center;
+}
+
+.forms select {
+    width: 192.98px;
+    border-width: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #b9bfc7;
+    background-color: white;
+    padding: 0.5rem 0.5rem;
+}

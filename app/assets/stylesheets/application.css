@@ -1,0 +1,174 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+    font-family: Mukta, sans-serif;
+    background-color: #f9fbff;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+.tables {    
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    color: #4f546c;
+    font-size: 0.9rem;
+}
+
+.centralized {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px #e1e5ee;
+    background-color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+thead {
+    box-shadow: 0 5px 10px #e1e5ee;
+}
+
+th, .link_new {
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+}
+
+td {
+    padding: 1rem 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #2962ff;
+}
+
+tr:nth-child(even) {
+    background-color: #f4f6fb;
+}
+
+tfoot th {
+    display: table-cell;
+    text-align: center;
+}
+
+.header {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 5px 10px #e1e5ee;
+}
+
+.header a {    
+    float:  left;
+    text-align: center;
+    padding: 14px 16px;
+    color: #4f546c;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.header a:hover {
+  background-color: #ddd;
+}
+
+.button {
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+}
+
+    .button-show {
+        color: #00268f;
+        background-color: #9bb6ff;
+    }
+
+
+    .button-edit {
+        color: #a68b00;
+        background-color: #fff0c2;
+    }
+
+    .button-cancel {
+        color: #c62828;
+        background-color: #ffcdd2;
+    }
+
+    .button-confirm {
+        color: rgb(28, 136, 28);
+        background-color: rgb(169, 255, 169);
+    }
+
+    .button-destroy {
+        font-family: Mukta, sans-serif;
+        font-size: 0.9rem;
+        color: #c62828;
+        background-color: #ffcdd2;
+        border-width: 0;
+        border-radius: 5px;
+        padding: 0.3rem 1rem;
+        cursor: pointer;
+    }
+
+
+td button {
+    font-family: Mukta, sans-serif;
+    font-size: 0.9rem;
+    color: #c62828;
+    background-color: #ffcdd2;
+    border-width: 0;
+    border-radius: 5px;
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+}
+
+.grid_column_1 {
+    grid-column-start: 1;
+}
+
+.grid_column_2 {
+    grid-column-start: 2;
+}
+
+.grid_column_3 {
+    grid-column-start: 3;
+}
+
+.grid_column_4 {
+    grid-column-start: 4;
+}
+
+.grid_span_2 {
+    grid-column: span 2;
+}
+
+.cancel_student_button {
+    grid-column: 1;
+}
+
+.confirm_student_button {
+    grid-column: 2;    
+}

@@ -1,0 +1,2 @@
+class Intitution < ApplicationRecord
+end
