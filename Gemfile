@@ -30,6 +30,9 @@ gem "jbuilder"
 # Validates dates [https://github.com/codegram/date_validator]
 gem 'date_validator', '~> 0.12.0'
 
+# Pry
+gem 'pry-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
