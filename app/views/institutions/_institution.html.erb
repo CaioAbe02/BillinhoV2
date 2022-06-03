@@ -49,7 +49,7 @@
               <tr>
                 <td><%= enrollment.student.name %></td>
                 <td><%= enrollment.student.cpf %></td>
-                <td><%= enrollment.student.birth_date %></td>
+                <td><%= enrollment.student.birth_date.strftime("%d/%m/%Y") %></td>
                 <td><%= enrollment.student.phone %></td>
                 <td><%= enrollment.student.gender %></td>
                 <td><%= enrollment.student.bill_payment_type %></td>

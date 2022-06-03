@@ -54,8 +54,8 @@
             <% enrollment.bills.each do |bill|%>
               <tr>
                 <td><%= bill.id %></td>
-                <td><%= bill.bill_value %></td>
-                <td><%= bill.due_date %></td>
+                <td><%= bill.bill_value.round(2) %></td>
+                <td><%= bill.due_date.strftime("%d/%m/%Y") %></td>
                 <td><%= bill.bill_status %></td>
               </tr>
             <% end %>

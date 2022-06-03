@@ -18,7 +18,7 @@
       <% @bills.each do |bill|%>
         <tr>
           <td><%= bill.bill_value.round(2) %></td>
-          <td><%= bill.due_date %></td>
+          <td><%= bill.due_date.strftime("%d/%m/%Y") %></td>
           <td><%= bill.bill_status %></td>
           <td><%= bill.enrollment_id %></td>
           <td><%= link_to "Edit", edit_bill_path(bill) %></td>

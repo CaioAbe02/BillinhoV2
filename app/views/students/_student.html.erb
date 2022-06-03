@@ -13,7 +13,7 @@
 
     <div class="grid_column_2 show_infos">
       <strong>Birth Date</strong>
-      <p><%= student.birth_date %></p>
+      <p><%= student.birth_date.strftime("%d/%m/%Y") %></p>
     </div>
 
     <div class="grid_column_3 show_infos">
@@ -92,7 +92,7 @@
             <tr>
               <td><%= bill.id %></td>
               <td><%= bill.bill_value %></td>
-              <td><%= bill.due_date %></td>
+              <td><%= bill.due_date.strftime("%d/%m/%Y") %></td>
               <td><%= bill.bill_status %></td>
             </tr>
           <% end %>
