@@ -34,19 +34,19 @@
 
   <div>
     <%= form.label :gender, style: "display: block" %>
-    <%= form.text_field :gender %>
+    <%= form.select :gender, ["M", "F"], { prompt: "Select a Gender" }, { class: "select_institution" } %>
   </div>
 
   <div>
     <%= form.label :bill_payment_type, style: "display: block" %>
-    <%= form.text_field :bill_payment_type %>
+    <%= form.select :bill_payment_type, ["Cartão", "Boleto"], { prompt: "Select a Student" }, { class: "select_institution" } %>
   </div>
 
-  <div>
+  <div class="forms-button">
     <%= link_to "Cancel", :back, class:"button button-cancel" %>
   </div>
 
-  <div class="confirm_student_button">
+  <div class="forms-button">
     <%= form.submit "Confirm", class:"button button-confirm" %>
   </div>
 </div>
