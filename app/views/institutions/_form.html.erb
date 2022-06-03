@@ -27,11 +27,11 @@
     <%= form.select :institution_type, ["Universidade", "Escola", "Creche"], { prompt: "Select a Student" }, { class: "select_institution" } %>
   </div>
 
-  <div>
+  <div class="forms-button">
     <%= link_to "Cancel", :back, class:"button button-cancel" %>
   </div>
 
-  <div class="confirm_student_button">
+  <div class="forms-button">
     <%= form.submit "Confirm", class:"button button-confirm" %>
   </div>
 </div>
